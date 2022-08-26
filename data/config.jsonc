@@ -1,0 +1,133 @@
+// Community Mapmaker Config
+{
+    "default": {
+        "keep_default_view": false,
+        "default_view": [
+            34.7212,
+            135.4828
+        ],
+        "maxbounds": "",
+        "_maxbounds": [
+            [
+                35.09545,
+                135.86492
+            ],
+            [
+                34.94088,
+                136.11914
+            ]
+        ],
+        "initZoom": 14,
+        "pc_minZoom": 1,
+        "phone_minZoom": 5,
+        "maxZoom": 20,
+        "zoomSnap": 0.5,
+        "PoiLoadZoom": 14,
+        "bookmark": true
+    },
+    "PoiViewZoom": {
+        "Playgrounds_Poi": 18,
+        "Playgrounds_Area": 15,
+        "activity": 12
+    },
+    "targets": [
+        "Playgrounds_Poi",
+        "Playgrounds_Area",
+        "activity"
+    ],
+    "listTable": {
+        // "targets"はConf.targetsをカテゴリ表示、"activity"はactivity(フォームデータ)を表示
+        "targets": [
+            "activity"
+        ],
+        "update_mode": "",
+        "playback": {
+            "view": false,
+            "zoomLevel": 15,
+            "timer": 4000
+        },
+        "download": false
+    },
+    "google": {
+        "Analytics": "",
+        "AppScript": "https://script.google.com/macros/s/AKfycbzQBY5sfw0pv7lI64J71pP0yBEIje2AbKcWenoJI1PVQcZTtDSbwTwnnXYcbsGKCtZS/exec",
+        "targetName": "activity"
+    },
+    "splash": {
+        "url": "./image/Playgrounds.png"
+    },
+    "static": {
+        "mode": false,
+        "osmjson": "",
+        "osmbounds": {
+            "NW": {
+                "lat": 45.7392,
+                "lng": 119.0340
+            },
+            "SE": {
+                "lat": 20.5444,
+                "lng": 144.8863
+            }
+        }
+    },
+    // トップメニュー一覧
+    "menu": [
+        {
+            "glot-model": "licence_title",
+            "linkto": "javascript:cMapmaker.licence()",
+            "divider": false
+        },
+        {
+            "glot-model": "owner",
+            "linkto": "https://yodogawaartnet.jimdofree.com/",
+            "divider": true
+        },
+        {
+            "glot-model": "about",
+            "linkto": "https://github.com/armd-02/AattoMark-Yodogawa",
+            "divider": false
+        },
+        {
+            "glot-model": "openstreetmap",
+            "linkto": "https://www.openstreetmap.org/about",
+            "divider": false
+        }
+    ],
+    // 詳細表示のモーダル設定
+    "detail_menu": [
+        {
+            "glot-model": "act_add",
+            "linkto": "javascript:modal_activities.edit({form:'Playgrounds'})",
+            "divider": false
+        },
+        {
+            "glot-model": "osm_open",
+            "linkto": "javascript:winCont.osm_open(cMapmaker.open_osmid)",
+            "divider": false
+        },
+        {
+            "glot-model": "button_close",
+            "linkto": "javascript:winCont.modal_close()",
+            "divider": false
+        }
+    ],
+    "detail_view": {
+        // 詳細モーダルの一番上を開くかどうか
+        "openfirst": true,
+        // 詳細モーダルの追加ボタン 
+        "buttons": [
+            {
+                "btn_class": "btn btn-light border-secondary mr-2",
+                "code": "javascript:modal_activities.edit({form:'Playgrounds'})",
+                "icon_class": "fas fa-plus",
+                "btn_glot_name": "add_activity"
+            },
+            {
+                "btn_class": "btn btn-light border-secondary",
+                "code": "javascript:cMapmaker.url_share()",
+                "icon_class": "fas fa-clone",
+                "btn_glot_name": "share_link"
+            }
+        ]
+    }
+}

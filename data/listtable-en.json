@@ -1,0 +1,36 @@
+{
+    "list": {
+        "columns": {
+            "common": [
+                {
+                    "id": "osmid",
+                    "hidden": true
+                },
+                {
+                    "id": "category",
+                    "name": "Category"
+                },
+                {
+                    "id": "name",
+                    "name": "Title"
+                },
+                {
+                    "id": "updatetime",
+                    "name": "Date"
+                }
+            ],
+            "poi_fields": [
+                "id",
+                "#category",
+                "name",
+                "timestamp"
+            ],
+            "act_fields": [
+                "id",
+                "category",
+                "title",
+                "updatetime"
+            ]
+        }
+    }
+}
