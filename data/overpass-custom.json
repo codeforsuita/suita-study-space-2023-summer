@@ -6,7 +6,10 @@
                 "way[\"leisure\"=\"park\"]",
                 "node[\"leisure\"=\"playground\"]",
                 "way[\"leisure\"=\"playground\"]",
-                "way[\"landuse\"=\"recreation_ground\"]"
+                "way[\"landuse\"=\"recreation_ground\"]",
+                "relation[\"leisure\"=\"park\"]",
+                "relation[\"leisure\"=\"playground\"]",
+                "relation[\"landuse\"=\"recreation_ground\"]"
             ],
             "tags": [
                 "leisure=park",
