@@ -12,25 +12,30 @@
                 },
                 {
                     "id": "name",
-                    "name": "題名"
+                    "name": "施設名"
                 },
                 {
-                    "id": "updatetime",
-                    "name": "日付",
-                    "hidden": false
+                    "id": "min_age",
+                    "name": "最低年齢"
+                },
+                {
+                    "id": "max_age",
+                    "name": "最高年齢"
                 }
             ],
             "poi_fields": [
                 "id",
                 "#category",
-                "name",
-                "timestamp"
+                "#parent.name",
+                "min_age",
+                "max_age"
             ],
             "act_fields": [
                 "id",
-                "category",
-                "title",
-                "updatetime"
+                "#category",
+                "#name",
+                "#min_age",
+                "#max_age"
             ]
         }
     }

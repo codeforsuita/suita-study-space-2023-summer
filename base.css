@@ -95,25 +95,36 @@ img.thumbnail {
     box-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
 }
 
-img.icon_normal {
+img.normal {
     background: url("./image/icon_circle.svg");
     background-size: cover;
     float: left;
-    padding: 4px;
-    height: 32px;
-    width: 32px;
+    padding: 4px !important;
+    height: 32px !important;
+    width: 32px !important;
     object-fit: contain;
 }
 
-img.icon_attention {
+img.attention {
     background: url("./image/icon_circle_attention.svg");
     background-size: cover;
     float: left;
-    padding: 8px;
+    padding: 8px !important;
     height: 48px;
     width: 48px;
     object-fit: contain;
 }
+
+/*
+.attention {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -28px;
+    left: 12px;
+}
+*/
 
 img.w100 {
     width: 100%;
@@ -315,17 +326,6 @@ h5[aria-expanded="true"]:before {
     height: 18px;
     margin-right: 0px;
     vertical-align: middle;
-}
-
-.attention {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: -28px;
-    left: 12px;
-    animation: rotation 1.5s ease 0s 1 alternate none running;
-    animation-iteration-count: infinite;
 }
 
 @keyframes rotation {

@@ -12,24 +12,18 @@
                 },
                 {
                     "id": "name",
-                    "name": "Title"
-                },
-                {
-                    "id": "updatetime",
-                    "name": "Date"
+                    "name": "name"
                 }
             ],
             "poi_fields": [
                 "id",
                 "#category",
-                "name",
-                "timestamp"
+                "#parent.name"
             ],
             "act_fields": [
                 "id",
-                "category",
-                "title",
-                "updatetime"
+                "#category",
+                "#name"
             ]
         }
     }

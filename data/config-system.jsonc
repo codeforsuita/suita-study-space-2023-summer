@@ -1,6 +1,9 @@
+// Community Mapmaker System Config
 {
     "icon": {
-        "path": "maki-icon"
+        "path": "maki-icon",
+        "normal": 32,
+        "attention": 48
     },
     "system": {
         "OverPassServer": [
@@ -11,7 +14,7 @@
     },
     "tile_select": {
         "Facebook_Builtin": "OSM_Thin",
-        "default": "OSM_Thin"
+        "default": "MapTiler"
     },
     "tile": {
         "MapTiler": {

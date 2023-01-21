@@ -19,6 +19,7 @@
                 "community_centre": "town-hall.svg",
                 "courthouse": "courthouse.svg",
                 "crematorium": "marker-stroked.svg",
+                "cinema": "cinema.svg",
                 "doctors": "doctor.svg",
                 "drinking_water": "drinking-water.svg",
                 "fast_food": "fast-food.svg",
@@ -66,44 +67,62 @@
                 "yes": "shelter.svg"
             },
             "attraction": {
-                "animal": "animal.svg"
+                "animal": "zoo.svg"
+            },
+            "barrier": {
+                "gate": "gate.svg"
             },
             "bridge": {
                 "yes": "bridge.svg"
             },
+            "building": {
+                "apartments": "home.svg",
+                "museum": "museum.svg",
+                "office": "town_hall.svg",
+                "public": "home.svg",
+                "temple": "place-of-worship.svg",
+                "residential": "residential-community.svg",
+                "retail": "shop.svg",
+                "yes": "home.svg"
+            },
             "diplomatic": {
                 "embassy": "diplomatic.svg"
             },
+            "disused:amenity": {
+                "school": "ruins.svg"
+            },
+            "office": {
+                "company": "briefcase.svg",
+                "government": "town_hall.svg"
+            },
             "shop": {
-                "art": "art-gallery.svg",
                 "agrarian": "agrarian.svg",
                 "alcohol": "alcohol-shop.svg",
                 "appliance": "laundry.svg",
-                "bakery": "bakery.svg",
-                "beverages": "bottles.svg",
-                "beauty": "beauty_salon.svg",
+                "art": "art-gallery.svg",
                 "baby_goods": "marker-stroked.svg",
-                "boutique": "clothing-store.svg",
+                "bakery": "bakery.svg",
+                "beauty": "beauty_salon.svg",
+                "beverages": "bottles.svg",
                 "bicycle": "bicycle.svg",
                 "books": "book_store.svg",
+                "boutique": "clothing-store.svg",
                 "brewing_supplies": "storage_fermenter.svg",
-                "medical_supply": "medical_supply.svg",
                 "butcher": "cleaver.svg",
                 "car": "car.svg",
                 "car_parts": "car-repair.svg",
                 "cheese": "cheese.svg",
                 "chemist": "chemist.svg",
                 "chocolate": "confectionery.svg",
+                "clothes": "clothing-store.svg",
                 "coffee": "hot_drink_cup.svg",
-                "cosmetics": "beauty_salon.svg",
+                "computer": "computer.svg",
                 "confectionery": "confectionery.svg",
                 "convenience": "shopping-basket.svg",
-                "clothes": "clothing-store.svg",
+                "cosmetics": "beauty_salon.svg",
                 "dairy": "cheese.svg",
-                "computer": "computer.svg",
-                "department_store": "shop.svg",
                 "deli": "meat.svg",
-                "optician": "optician.svg",
+                "department_store": "shop.svg",
                 "doityourself": "tools.svg",
                 "dry_cleaning": "clothes_hanger.svg",
                 "electronics": "electronic.svg",
@@ -111,40 +130,45 @@
                 "florist": "florist.svg",
                 "frozen_food": "shop.svg",
                 "funeral_directors": "cemetery.svg",
-                "gift": "gift.svg",
-                "laundry": "laundry.svg",
                 "furniture": "furniture.svg",
-                "interior_decoration": "interior_decoration.svg",
-                "hardware": "tools.svg",
                 "garden_centre": "garden_centre.svg",
+                "general":"shop.svg",
+                "gift": "gift.svg",
                 "greengrocer": "carrot.svg",
                 "hairdresser": "hairdresser.svg",
+                "hardware": "tools.svg",
                 "health_food": "shop.svg",
                 "ice_cream": "ice-cream.svg",
-                "pawnbroker": "marker-stroked.svg",
+                "interior_decoration": "interior_decoration.svg",
                 "kiosk": "store.svg",
+                "laundry": "laundry.svg",
                 "mall": "shopping_mall.svg",
-                "motorcycle": "motorcycle.svg",
                 "massage": "massage.svg",
+                "medical_supply": "medical_supply.svg",
+                "motorcycle": "motorcycle.svg",
+                "optician": "optician.svg",
                 "pasta": "restaurant.svg",
                 "pastry": "bakery.svg",
+                "pawnbroker": "marker-stroked.svg",
+                "rice": "shop.svg",
                 "seafood": "restaurant-seafood.svg",
                 "second_hand": "second_hand.svg",
+                "shoes": "shoe.svg",
                 "spices": "spice_bottle.svg",
                 "supermarket": "grocery.svg",
                 "tea": "teahouse.svg",
                 "ticket": "ticket.svg",
                 "tobacco": "pipe.svg",
                 "travel_agency": "briefcase.svg",
-                "rice": "marker-stroked.svg",
-                "shoes": "shoe.svg",
                 "variety_store": "shop.svg",
                 "water": "water.svg",
                 "wine": "alcohol-shop.svg"
             },
             "natural": {
+                "peak": "mountain.svg",
                 "tree": "park.svg",
                 "water": "water.svg",
+                "wetland": "wetland.svg",
                 "wood": "park-alt1.svg"
             },
             "emergency": {
@@ -191,26 +215,35 @@
                 "swing": "playground.svg",
                 "teenshelter": "playground.svg",
                 "trampoline": "playground.svg",
+                "tunnel_tube":"playground.svg",
                 "water": "playground.svg",
                 "youth_bench": "bench.svg",
                 "zipwire": "playground.svg"
             },
             "tourism": {
+                "attraction": "star.svg",
                 "artwork": "art-gallery.svg",
                 "gallery": "art-gallery2.svg",
+                "guest_house": "lodging.svg",
                 "information": "information.svg",
                 "museum": "museum.svg",
                 "picnic_site": "picnic-site.svg",
-                "viewpoint": "spotting_scope.svg"
+                "viewpoint": "spotting_scope.svg",
+                "zoo": "zoo.svg"
             },
             "historic": {
                 "aircraft": "airfield.svg",
                 "archaeological_site": "archaeological-site.svg",
+                "battlefield": "ruins.svg",
+                "boundary_stone": "milestone.svg",
                 "castle": "castle-JP.svg",
                 "cannon": "cannon.svg",
                 "memorial": "monument.svg",
                 "monument": "monument.svg",
+                "milestone": "milestone.svg",
                 "heritage": "archaeological-site.svg",
+                "tomb": "cemetery-JP.svg",
+                "locomotive": "ruins.svg",
                 "wayside_shrine": "ojizou.svg",
                 "wayside_cross": "cross_christ.svg",
                 "vehicle": "car.svg"
@@ -239,6 +272,7 @@
                 "orchard": "park.svg",
                 "aquaculture": "aquarium.svg",
                 "reservoir": "water.svg",
+                "retail":"shop.svg",
                 "grass": "lawn.svg",
                 "recreation_ground": "pitch.svg"
             },
@@ -250,9 +284,6 @@
                 "playground": "playground.svg",
                 "swimming_pool": "swimming.svg"
             },
-            "office": {
-                "government": "marker-stroked.svg"
-            },
             "railway": {
                 "station": "train.svg"
             },
@@ -260,6 +291,7 @@
                 "station": "train.svg"
             },
             "place": {
+                "city": "city.svg",
                 "square": "square-stroked.svg",
                 "suburb": "triangle.svg",
                 "quarter": "triangle.svg",
@@ -267,13 +299,28 @@
             },
             "waterway": {
                 "canal": "water.svg",
-                "river": "water.svg"
+                "lock_gate": "dam.svg",
+                "river": "water.svg",
+                "stream": "water.svg",
+                "waterfall": "waterfall.svg"
             },
             "wikipedia": {
                 "*": "wikipedia.svg"
             }
         },
         "subtag": {
+            "artwork": {
+                "artwork_type": {
+                    "bust": "statue.svg",
+                    "sculpture": "sculpture.svg",
+                    "mural": "art-gallery.svg",
+                    "graffiti": "art-gallery.svg",
+                    "installation": "sculpture.svg",
+                    "statue": "statue.svg",
+                    "stone": "statue.svg",
+                    "painting": "art-gallery.svg"
+                }
+            },
             "landuse": {
                 "religion": {
                     "christian": "cross_christ.svg",

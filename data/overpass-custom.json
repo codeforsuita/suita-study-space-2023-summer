@@ -29,13 +29,10 @@
             "overpass": [
                 "node[\"playground\"]",
                 "way[\"playground\"]",
-                "area[\"playground\"]",
-                "node[\"amenity\"=\"bench\"]",
-                "way[\"amenity\"=\"bench\"]"
+                "area[\"playground\"]"
             ],
             "tags": [
-                "playground",
-                "amenity"
+                "playground"
             ],
             "expression": {
                 "stroke": "#c0c0c0",

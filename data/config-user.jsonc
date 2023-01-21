@@ -1,4 +1,4 @@
-// Community Mapmaker Config
+// Community Mapmaker User Config
 {
     "default": {
         "keep_default_view": false,
@@ -20,9 +20,8 @@
         "initZoom": 14,
         "pc_minZoom": 1,
         "phone_minZoom": 5,
-        "maxZoom": 20,
+        "maxZoom": 22,
         "zoomSnap": 0.5,
-        "PoiLoadZoom": 14,
         "bookmark": true
     },
     "PoiViewZoom": {
@@ -30,17 +29,20 @@
         "Playgrounds_Area": 15,
         "activity": 12
     },
-    "targets": [
-        "Playgrounds_Poi",
-        "Playgrounds_Area",
-        "activity"
-    ],
-    "listTable": {
-        // "targets"はConf.targetsをカテゴリ表示、"activity"はactivity(フォームデータ)を表示
+    "PoiView": {
         "targets": [
+            "Playgrounds_Poi",
+            "Playgrounds_Area",
             "activity"
         ],
-        "update_mode": "",
+        "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
+    },
+    "listTable": {
+        "targets": [ // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
+            "Playgrounds_Poi",
+            "Playgrounds_Area",
+            "activity"
+        ],
         "playback": {
             "view": false,
             "zoomLevel": 15,
