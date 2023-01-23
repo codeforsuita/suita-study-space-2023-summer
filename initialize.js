@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function () {
 		document.title = glot.get("site_title");					// Title
 		winCont.window_resize();									// Set Window Size(mapidのサイズ指定が目的)
 		winCont.splash(true);
-
+		listTable.init();
 		
 		Promise.all([
 			gSheet.get(Conf.google.AppScript), cMapmaker.load_static(), leaflet.init()	// get_zoomなどleafletの情報が必要なためleaflet.init後に実行
@@ -61,11 +61,12 @@ window.addEventListener("DOMContentLoaded", function () {
 			poiCont.set_actjson(results[0]);
 			let osmids = poiCont.pois().acts.map(act => { return act.osmid });
 			osmids = osmids.filter(Boolean);
-			if (osmids.length > 0 && !Conf.static.mode) OvPassCnt.get_osmids(osmids).then(geojson => poiCont.add_geojson(geojson));
+			if (osmids.length > 0 && !Conf.static.mode) OvPassCnt.get_osmids(osmids).then(geojson => {
+				console.log(geojson);
+				poiCont.add_geojson(geojson);
+			});
 
 			winCont.window_resize();
-			listTable.init();
-			//listTable.make_category(Conf.listTable.targets);	// set select list
 
 			cMapmaker.mode_change("map");									// initialize last_modetime
 			winCont.menu_make(Conf.menu, "main_menu");

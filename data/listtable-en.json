@@ -13,17 +13,23 @@
                 {
                     "id": "name",
                     "name": "name"
+                },
+                {
+                    "id": "min_age",
+                    "name": "min age"
                 }
             ],
             "poi_fields": [
                 "id",
                 "#category",
-                "#parent.name"
+                "#parent.name",
+                "min_age"
             ],
             "act_fields": [
                 "id",
                 "#category",
-                "#name"
+                "#name",
+                "#min_age"
             ]
         }
     }

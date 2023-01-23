@@ -58,14 +58,14 @@ class CMapMaker {
 		poiMarker.delete_all();
 		targets = targets[0] == "-" ? Conf.PoiView.targets : targets;	// '-'はすべて表示
 		targets.forEach((target) => {
-			if (target == oldselect) {	// 選択している種別の場合
+			if (target == oldselect || oldselect == "-") {	// 選択している種別の場合
 				if (zm >= Conf.PoiViewZoom[target]) {
 					poiMarker.set(target, target == "activity",);
 					setcount++;
 				}
 			}
 		});
-		if (setcount == 0) poiMarker.set("", false, listTable.flist);		// 含まれない(=listTable.flist)
+		if (setcount == 0) poiMarker.set("", false, listTable.flist);		// 含まれない(=listTable.flist)&絞り込み時はズーム無関係
 		console.log("cMapmaker: view_poi: End.");
 	};
 

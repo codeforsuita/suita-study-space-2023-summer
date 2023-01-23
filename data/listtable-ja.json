@@ -16,26 +16,20 @@
                 },
                 {
                     "id": "min_age",
-                    "name": "最低年齢"
-                },
-                {
-                    "id": "max_age",
-                    "name": "最高年齢"
+                    "name": "年齢"
                 }
             ],
             "poi_fields": [
                 "id",
                 "#category",
                 "#parent.name",
-                "min_age",
-                "max_age"
+                "min_age"
             ],
             "act_fields": [
                 "id",
                 "#category",
                 "#name",
-                "#min_age",
-                "#max_age"
+                "#min_age"
             ]
         }
     }
