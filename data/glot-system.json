@@ -119,10 +119,6 @@
 		"ja": "閉じる",
 		"en": "close"
 	},
-	"modal_popover_copied": {
-		"ja": "クリップボードにコピーしました",
-		"en": "Clipboard to clipboard"
-	},
 	"source_wikipedia": {
 		"ja": "(出典: Wikipedia)",
 		"en": "(Source: Wikipedia)"

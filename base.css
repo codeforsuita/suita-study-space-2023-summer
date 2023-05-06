@@ -17,7 +17,7 @@ header {
 body {
     font-family: "Tahoma";
     height: 100%;
-    background-color: #000000;
+    background-color: #ffffff;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
@@ -90,12 +90,21 @@ li::before {
 
 img.thumbnail {
     border: 4px solid #ffffff;
-    margin: 2em auto 2em auto;
+    margin: 2em 2em 2em 2em;
     display: block;
     box-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
 }
 
 img.normal {
+    background-size: cover;
+    float: left;
+    padding: 4px !important;
+    height: 32px !important;
+    width: 32px !important;
+    object-fit: contain;
+}
+
+img.circle {
     background: url("./image/icon_circle.svg");
     background-size: cover;
     float: left;
@@ -115,17 +124,6 @@ img.attention {
     object-fit: contain;
 }
 
-/*
-.attention {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: -28px;
-    left: 12px;
-}
-*/
-
 img.w100 {
     width: 100%;
 }
@@ -144,10 +142,8 @@ h2.zoom {
 }
 
 .menu {
-    color: white;
     margin: 2px 0px;
-    background-color: rgba(0, 48, 0, 0.4);
-    border: 0px;
+    border: 1px solid;
     width: initial !important;
     height: 100%;
 }
@@ -212,10 +208,14 @@ span.fs-14{
 
 /* button for select way color */
 
+.modal-backdrop.show{
+    opacity: 0;
+}
+
 .modal-dialog-fluid {
     max-width: inherit !important;
-    max-height: 50% !important;
-    width: 80% !important;
+    max-height: 98% !important;
+    width: 98% !important;
 }
 
 .modal-body {
@@ -225,6 +225,10 @@ span.fs-14{
 
 .leaflet-div-icon {
     border: 0px !important;
+}
+
+.leaflet-popup-content{
+    width: 30vw;
 }
 
 input[type="search"] {
@@ -294,12 +298,6 @@ tr.selected td {
 .leaflet-touch .leaflet-control-layers-toggle {
     width: 30px !important;
     height: 30px !important;
-}
-
-.modal-dialog-fluid {
-    max-width: inherit !important;
-    width: 98% !important;
-    margin-left: 8px !important;
 }
 
 .cursor-pointer {

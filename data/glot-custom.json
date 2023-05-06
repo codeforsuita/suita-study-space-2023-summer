@@ -8,20 +8,28 @@
 		"en": "by playground map for everyone project"
 	},
 	"about": {
-		"ja": "「遊具のある公園マップ」開発サイト",
+		"ja": "みんなで公園マッププロジェクトとは",
 		"en": "playground equipment map development site"
 	},
+	"about_message": {
+		"ja": "公園の良さをみんなで共有するため、公園や遊具の情報を集めてマップを作る活動です。詳しくは<a href='https://k-sakanoshita.medium.com/1173cab3fd72'>プロジェクトのブログへ</a>",
+		"en": "In order to share the goodness of the park with everyone, this is an activity to collect information on the park and playground equipment and create a map."
+	},
 	"owner": {
-		"ja": "みんなで公園マッププロジェクトについて",
-		"en": "about playground map for everyone project"
+		"ja": "プロジェクトのブログ・サイトへ",
+		"en": "To the project blog site"
 	},
 	"licence_title": {
-		"ja": "遊具のある公園マップについて",
+		"ja": "利用しているデータについて",
 		"en": "about playground equipment map"
 	},
 	"licence_message": {
-		"ja": "みんなで遊具のある公園情報を集めてマップを作っています。<br>このサイトで使われているデータは、OpenStreetMapとプロジェクトのデータを組み合わせています。</a>",
+		"ja": "このサイトで使われているデータは、OpenStreetMapとプロジェクトのデータを組み合わせています。</a>",
 		"en": "We are all collecting information about parks with playground equipment and making maps.<br>The data used is a combination of OpenStreetMap and playground equipment for everyone project.</a>"
+	},
+	"develop_site": {
+		"ja": "遊具のある公園マップのソースコード",
+		"en": "Park map source code with playground equipment"
 	},
 	"more_message": {
 		"ja": "",
@@ -47,17 +55,17 @@
 		"ja": "思い出など",
 		"en": "Memorials"
 	},
-	"actdate":{
-		"ja":"確認日",
-		"en":"Disaster Date"
+	"actdate": {
+		"ja": "確認日",
+		"en": "Disaster Date"
 	},
-	"ds_subject":{
-		"ja":"作業名",
-		"en":"Subject"
+	"ds_subject": {
+		"ja": "作業名",
+		"en": "Subject"
 	},
-	"ds_detail_url":{
-		"ja":"詳細URL",
-		"en":"Detail URL"
+	"ds_detail_url": {
+		"ja": "詳細URL",
+		"en": "Detail URL"
 	},
 	"act_grade": {
 		"ja": "学年",

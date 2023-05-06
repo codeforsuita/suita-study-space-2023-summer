@@ -40,13 +40,13 @@ window.addEventListener("DOMContentLoaded", function () {
 		winCont.window_resize();									// Set Window Size(mapidのサイズ指定が目的)
 		winCont.splash(true);
 		listTable.init();
-		
+
 		Promise.all([
 			gSheet.get(Conf.google.AppScript), cMapmaker.load_static(), leaflet.init()	// get_zoomなどleafletの情報が必要なためleaflet.init後に実行
 		]).then(results => {
 			// leaflet add control
 			leaflet.controlAdd("bottomleft", "zoomlevel", "");
-			leaflet.controlAdd("topleft", "baselist", basehtml, "leaflet-control m-1");			// Make: base list
+			leaflet.controlAdd("topleft", "baselist", basehtml, "leaflet-control m-0 p-0");			// Make: base list
 			leaflet.locateAdd();
 			leaflet.controlAdd("bottomright", "global_status", "", "text-information");	// Make: progress
 			leaflet.controlAdd("bottomright", "global_spinner", "", "spinner-border text-primary d-none");
@@ -54,8 +54,8 @@ window.addEventListener("DOMContentLoaded", function () {
 			winCont.download(Conf.listTable.download);			// download view:true/false
 
 			// mouse hover event(baselist mouse scroll)
-			baselist.addEventListener("mouseover", () => { map.scrollWheelZoom.disable(); map.dragging.disable() }, false);
-			baselist.addEventListener("mouseleave", () => { map.scrollWheelZoom.enable(); map.dragging.enable() }, false);
+			L.DomEvent.disableScrollPropagation(baselist);
+			L.DomEvent.disableClickPropagation(baselist);
 
 			// save gSheet and osmdata
 			poiCont.set_actjson(results[0]);
@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", function () {
 							case "way":
 							case "relation":
 								let subparam = param.split('.');					// split child elements(.)
-								cMapmaker.detail_view(subparam[0], subparam[1]);
+								cMapmaker.viewDetail(subparam[0], subparam[1]);
 								break;
 						};
 					};

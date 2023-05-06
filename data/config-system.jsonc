@@ -2,7 +2,7 @@
 {
     "icon": {
         "path": "maki-icon",
-        "normal": 32,
+        "circle": 32,
         "attention": 48
     },
     "system": {
@@ -82,12 +82,12 @@
     },
     "style": {
         "circle": {
-            "radius": 8,
+            "radius": 0,
             "color": "#000080",
             "fillColor": "#0000A0",
             "Opacity": 0.1,
             "fillOpacity": 0.1,
-            "timer": 2000
+            "timer": 1000
         },
         "text": {
             "view": true,

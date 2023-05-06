@@ -27,7 +27,7 @@
     "PoiViewZoom": {
         "Playgrounds_Poi": 18,
         "Playgrounds_Area": 14,
-        "activity": 12
+        "activity": 16
     },
     "PoiView": {
         "targets": [
@@ -75,18 +75,23 @@
     // トップメニュー一覧
     "menu": [
         {
+            "glot-model": "about",
+            "linkto": "javascript:cMapmaker.about()",
+            "divider": false
+        },
+        {
+            "glot-model": "owner",
+            "linkto": "https://k-sakanoshita.medium.com/1173cab3fd72",
+            "divider": true
+        },
+        {
             "glot-model": "licence_title",
             "linkto": "javascript:cMapmaker.licence()",
             "divider": false
         },
         {
-            "glot-model": "owner",
-            "linkto": "https://yodogawaartnet.jimdofree.com/",
-            "divider": true
-        },
-        {
-            "glot-model": "about",
-            "linkto": "https://github.com/armd-02/AattoMark-Yodogawa",
+            "glot-model": "develop_site",
+            "linkto": "https://github.com/armd-02/Playgrounds",
             "divider": false
         },
         {

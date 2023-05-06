@@ -33,7 +33,23 @@
                     "glot": "act_picture_url2",
                     "type": "image_url",
                     "gsheet": "picture_url2"
+                },
+                "picture_url3": {
+                    "glot": "act_picture_url2",
+                    "type": "image_url",
+                    "gsheet": "picture_url2"
+                },
+                "picture_url4": {
+                    "glot": "act_picture_url2",
+                    "type": "image_url",
+                    "gsheet": "picture_url2"
+                },
+                "picture_url5": {
+                    "glot": "act_picture_url2",
+                    "type": "image_url",
+                    "gsheet": "picture_url2"
                 }
+
             }
         }
     }
