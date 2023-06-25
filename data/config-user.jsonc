@@ -25,22 +25,22 @@
         "bookmark": true
     },
     "PoiViewZoom": {
-        "Playgrounds_Poi": 18,
-        "Playgrounds_Area": 14,
+        "library": 18,
+        "centre": 14,
         "activity": 16
     },
     "PoiView": {
         "targets": [
-            "Playgrounds_Poi",
-            "Playgrounds_Area",
+            "library",
+            "centre",
             "activity"
         ],
         "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
     },
     "listTable": {
         "targets": [ // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
-            "Playgrounds_Poi",
-            "Playgrounds_Area",
+            "library",
+            "centre",
             "activity"
         ],
         "playback": {
