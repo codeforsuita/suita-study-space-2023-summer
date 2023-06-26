@@ -56,7 +56,7 @@
         "targetName": "activity"
     },
     "splash": {
-        "url": "./image/Playgrounds.png"
+        "url": "./image/study-room-top.png"
     },
     "static": {
         "mode": false,
@@ -81,7 +81,7 @@
         },
         {
             "glot-model": "owner",
-            "linkto": "https://k-sakanoshita.medium.com/1173cab3fd72",
+            "linkto": "https://www.facebook.com/code4suita/?locale=ja_JP",
             "divider": true
         },
         {
@@ -91,7 +91,7 @@
         },
         {
             "glot-model": "develop_site",
-            "linkto": "https://github.com/armd-02/Playgrounds",
+            "linkto": "https://github.com/codeforsuita/suita-study-room",
             "divider": false
         },
         {

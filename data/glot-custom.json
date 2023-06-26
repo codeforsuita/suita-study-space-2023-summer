@@ -1,19 +1,19 @@
 {
 	"site_title": {
-		"ja": "遊具のある公園マップ",
-		"en": "playground equipment map"
+		"ja": "吹田市内の自習マップ 2023年夏版",
+		"en": "study space map in Suita City 2023 version"
 	},
 	"site_subtitle": {
-		"ja": "by みんなで公園マッププロジェクト",
-		"en": "by playground map for everyone project"
+		"ja": "by Code For Suita",
+		"en": "by Code For Suita"
 	},
 	"about": {
-		"ja": "みんなで公園マッププロジェクトとは",
-		"en": "playground equipment map development site"
+		"ja": "Code For Suitaとは",
+		"en": "study space map in Suita City 2023 version development site"
 	},
 	"about_message": {
-		"ja": "公園の良さをみんなで共有するため、公園や遊具の情報を集めてマップを作る活動です。詳しくは<a href='https://k-sakanoshita.medium.com/1173cab3fd72'>プロジェクトのブログへ</a>",
-		"en": "In order to share the goodness of the park with everyone, this is an activity to collect information on the park and playground equipment and create a map."
+		"ja": "吹田市でCivicTechの普及やオープンデータの推進に取り組んでいます。詳しくは<a href='https://www.facebook.com/code4suita'>Facebookへ</a>",
+		"en": "We encourage civic tech action and using open data in Suita City. more info -> <a href='https://www.facebook.com/code4suita'>Facebook</a>"
 	},
 	"owner": {
 		"ja": "プロジェクトのブログ・サイトへ",
@@ -21,15 +21,15 @@
 	},
 	"licence_title": {
 		"ja": "利用しているデータについて",
-		"en": "about playground equipment map"
+		"en": "about study space map in Suita City 2023 version"
 	},
 	"licence_message": {
 		"ja": "このサイトで使われているデータは、OpenStreetMapとプロジェクトのデータを組み合わせています。</a>",
-		"en": "We are all collecting information about parks with playground equipment and making maps.<br>The data used is a combination of OpenStreetMap and playground equipment for everyone project.</a>"
+		"en": "We are all collecting information about study spaces and making maps.<br>The data used is a combination of OpenStreetMap and Code for Suita.</a>"
 	},
 	"develop_site": {
-		"ja": "遊具のある公園マップのソースコード",
-		"en": "Park map source code with playground equipment"
+		"ja": "吹田市内の自習マップ 2023年夏版のソースコード",
+		"en": "source code of study space map in Suita City 2023 version"
 	},
 	"more_message": {
 		"ja": "",
