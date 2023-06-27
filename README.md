@@ -17,8 +17,8 @@
   - ※ チーム運用するなら github organization の方が良いかも？
 - github Pages を設定する
   - [GitHub Pages サイトを作成する - GitHub Docs](https://docs.github.com/ja/pages/getting-started-with-github-pages/creating-a-github-pages-site)
-- 以下のような google スプレッドシート を作る
-  - https://docs.google.com/spreadsheets/d/1BrxbNH36Bx4wk_-IPL32ji_CxYwcVRggLO9iTKEztSY/edit?usp=sharing
+- google スプレッドシート を作る
+  - 内容 ... TODO
 - スプレッドシートに App Script を追加する
   - 追加するスクリプト `gscript/doGet.gs`
   - 追加の仕方
