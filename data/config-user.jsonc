@@ -25,8 +25,8 @@
         "bookmark": true
     },
     "PoiViewZoom": {
-        "library": 99,
-        "centre": 99,
+        "library": 14,
+        "centre": 14,
         "activity": 14
     },
     "PoiView": {
