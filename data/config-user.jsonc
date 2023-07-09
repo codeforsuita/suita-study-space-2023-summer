@@ -39,8 +39,8 @@
     },
     "listTable": {
         "targets": [ // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
-            // "library",
-            // "centre",
+            "library",
+            "centre",
             "activity"
         ],
         "playback": {
