@@ -55,7 +55,7 @@
         "targetName": "activity"
     },
     "splash": {
-        "url": "./image/study-room-top.png"
+        "url": "./image/study-space-top.png"
     },
     "static": {
         "mode": false,
