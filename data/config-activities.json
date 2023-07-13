@@ -19,6 +19,11 @@
           "type": "textarea",
           "gsheet": "body"
         },
+        "capacity": {
+          "glot": "capacity",
+          "type": "textarea",
+          "gsheet": "body"
+        },
         "detail_url": {
           "glot": "ds_detail_url",
           "type": "url",
