@@ -21,7 +21,17 @@
         },
         "capacity": {
           "glot": "capacity",
-          "type": "textarea",
+          "type": "text",
+          "gsheet": "body"
+        },
+        "target": {
+          "glot": "target",
+          "type": "text",
+          "gsheet": "body"
+        },
+        "utilization_time": {
+          "glot": "utilization_time",
+          "type": "text",
           "gsheet": "body"
         },
         "detail_url": {
