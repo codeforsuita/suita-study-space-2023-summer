@@ -174,17 +174,17 @@
 	"memories_reception": {
 		"ja": "受付日",
 		"en": "Reception date"
-	}
+	},
 	"capacity": {
 		"ja": "定員",
 		"en": "capacity"
-	}
+	},
 	"target": {
 		"ja": "対象者",
 		"en": "Target"
-	}
+	},
 	"utilization_time": {
 		"ja": "利用時間",
 		"en": "Utilization time"
-	}
+	},
 }
