@@ -25,10 +25,7 @@
         "bookmark": true
     },
     "PoiViewZoom": {
-        "library": 14,
-        "centre": 14,
-        "activity": 14,
-        "ChildrensCenter_Poi": 14
+        "activity": 14
     },
     "PoiView": {
         "targets": [
