@@ -22,17 +22,17 @@
         "capacity": {
           "glot": "capacity",
           "type": "text",
-          "gsheet": "body"
+          "gsheet": "capacity"
         },
         "target": {
           "glot": "target",
           "type": "text",
-          "gsheet": "body"
+          "gsheet": "target"
         },
         "utilization_time": {
           "glot": "utilization_time",
           "type": "text",
-          "gsheet": "body"
+          "gsheet": "utilization_time"
         },
         "detail_url": {
           "glot": "ds_detail_url",
