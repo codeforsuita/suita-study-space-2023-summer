@@ -45,13 +45,12 @@
         },
         "ChildrensCenter_Poi": {
             "overpass": [
-                "node[\"amenity\"=\"social_facility\"][\"social_facility\"=\"assisted_living\"]",
-                "way[\"amenity\"=\"social_facility\"][\"social_facility\"=\"assisted_living\"]",
-                "relation[\"amenity\"=\"social_facility\"][\"social_facility\"=\"assisted_living\"]"
+                "node[\"amenity\"=\"social_facility\"]",
+                "way[\"amenity\"=\"social_facility\"]",
+                "relation[\"amenity\"=\"social_facility\"]"
             ],
             "tags": [
-                "amenity=social_facility",
-                "social_facility=assisted_living"
+                "amenity=social_facility"
             ],
             "expression": {
                 "stroke": "#c0c0c0",
