@@ -27,12 +27,14 @@
     "PoiViewZoom": {
         "library": 14,
         "centre": 14,
-        "activity": 14
+        "activity": 14,
+        "ChildrensCenter_Poi": 14
     },
     "PoiView": {
         "targets": [
             "library",
             "centre",
+            "ChildrensCenter_Poi",
             "activity"
         ],
         "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
@@ -41,6 +43,7 @@
         "targets": [ // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
             "library",
             "centre",
+            "ChildrensCenter_Poi",
             "activity"
         ],
         "playback": {
