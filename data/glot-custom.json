@@ -24,8 +24,8 @@
 		"en": "about study space map in Suita City 2023 version"
 	},
 	"licence_message": {
-		"ja": "このサイトで使われているデータは、OpenStreetMapとプロジェクトのデータを組み合わせています。</a>",
-		"en": "We are all collecting information about study spaces and making maps.<br>The data used is a combination of OpenStreetMap and Code for Suita.</a>"
+		"ja": "このサイトで使われているデータは、OpenStreetMapと、吹田市が公開している<a href='https://www.city.suita.osaka.jp/kosodate/1020164/1028410.html'>オープンデータ「すいた夏休み自習室2023」</a>を組み合わせています。",
+		"en": "We are all collecting information about study spaces and making maps.<br>The data used is a combination of OpenStreetMap and <a href='https://www.city.suita.osaka.jp/kosodate/1020164/1028410.html'>Suita city open data.</a>"
 	},
 	"develop_site": {
 		"ja": "吹田市内の自習マップ 2023年夏版のソースコード",
