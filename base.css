@@ -61,6 +61,9 @@ ul {
     column-count: 3;
     list-style-type: none;
 }
+ul.activity-list {
+    column-count: 1;
+}
 
 li::before {
     position: relative;
