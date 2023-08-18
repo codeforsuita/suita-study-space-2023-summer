@@ -2,7 +2,7 @@ class modal_OSMbasic {
     // make modal html for OSM basic tags
 
     make(tags) {
-        let catname = poiCont.get_catname(tags);
+        let catname = poiCont.getCatnames(tags);
         let elements = 0;
         let html = `<div class="d-flex justify-content-between flex-wrap mb-3">`;
 

@@ -2,11 +2,12 @@
 {
     "default": {
         "tile_default": "MapTiler", // タイル一覧は config-system.jsonc へ
-        "keep_default_view": false,
-        "default_view": [
+        "keep_viewCenter": false,
+        "viewCenter": [
             135.4828,
             34.7212
         ],
+        "viewPitch": 40,
         "maxbounds": "",
         "_maxbounds": [
             [
@@ -132,7 +133,7 @@
             },
             {
                 "btn_class": "btn btn-light border-secondary",
-                "code": "javascript:cMapMaker.url_share()",
+                "code": "javascript:cMapMaker.shareURL()",
                 "icon_class": "fas fa-clone",
                 "btn_glot_name": "share_link"
             }

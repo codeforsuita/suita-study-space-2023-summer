@@ -40,9 +40,9 @@ window.addEventListener("DOMContentLoaded", function () {
 		Conf.osm = Object.assign(Conf.osm, JSON5.parse(arguments[10][0]).osm);	// import OverPass
 		window.onresize = winCont.window_resize;    							// 画面サイズに合わせたコンテンツ表示切り替え
 		document.title = glot.get("site_title");								// Title
-		winCont.window_resize();												// Set Window Size(mapidのサイズ指定が目的)
 		winCont.splash(true);
 		listTable.init();
+		winCont.window_resize();												// Set Window Size(mapidのサイズ指定が目的)
 
 		Promise.all([
 			gSheet.get(Conf.google.AppScript), cMapMaker.load_static(), MapLibre.init(Conf)	// get_zoomなどMapLibreの情報が必要なためMapLibre.init後に実行
@@ -57,9 +57,9 @@ window.addEventListener("DOMContentLoaded", function () {
 			MapLibre.addScale("bottom-left");
 			winCont.playback(Conf.listTable.playback.view);		// playback control view:true/false
 			winCont.download(Conf.listTable.download);			// download view:true/false
-			cMapMaker.mode_change("map");									// initialize last_modetime
-			winCont.menu_make(Conf.menu, "main_menu");
 			cMapMaker.init();
+			cMapMaker.mode_change("map");						// initialize last_modetime
+			winCont.menu_make(Conf.menu, "main_menu");
 			glot.render();
 
 			const init_close = function () {
@@ -91,8 +91,8 @@ window.addEventListener("DOMContentLoaded", function () {
 				});
 			}
 
-			// save gSheet and osmdata
-			poiCont.set_actjson(results[0]);
+			// Load gSheet and osmdata
+			poiCont.setActdata(results[0]);		// gSheetをPoiContにセット
 			let osmids = poiCont.pois().acts.map(act => { return act.osmid });
 			osmids = osmids.filter(Boolean);
 			if (osmids.length > 0 && !Conf.static.mode) {

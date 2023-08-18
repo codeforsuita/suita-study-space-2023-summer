@@ -40,7 +40,7 @@ class CMapMaker {
 			list_collapse.classList[params[this.mode][1]]('show');
 			this.last_modetime = Date.now();
 			this.status = "normal";
-			mapid.focus();
+			winCont.window_resize();
 		};
 	};
 
@@ -71,7 +71,7 @@ class CMapMaker {
 		let pois = poiCont.get_pois(targets);
 		targets.forEach((target) => {
 			console.log("viewArea: " + target);
-			MapLibre.addGeojson({ "type": "FeatureCollection", "features": pois.geojson }, target);
+			MapLibre.addLine({ "type": "FeatureCollection", "features": pois.geojson }, target);
 		});
 		console.log("viewArea: End.");
 	};
@@ -162,7 +162,8 @@ class CMapMaker {
 		let tags = osmobj == undefined ? { "targets": [] } : osmobj.geojson.properties;
 		tags["*"] = "*";
 		let target = osmobj == undefined ? "*" : osmobj.targets[0];
-		let category = poiCont.get_catname(tags);
+		target = target == undefined ? "*" : target;					// targetが取得出来ない実在POI対応
+		let category = poiCont.getCatnames(tags);
 		let title = `<img src="./${Conf.icon.path}/${poiMarker.get_icon(tags)}" class="normal">`, message = "";
 
 		for (let i = 0; i < Conf.osm[target].titles.length; i++) {
@@ -200,26 +201,13 @@ class CMapMaker {
 		this.detail = true;
 	};
 
-	url_share(actid) {			// URL共有機能
-		function execCopy(string) {
-			let pre = document.createElement('pre');			// ClipBord Copy
-			pre.style.userSelect = 'auto';
-			let text = document.createElement("div");
-			text.appendChild(pre).textContent = string;
-			text.style.position = 'fixed';
-			text.style.right = '200%';
-			document.body.appendChild(text);
-			document.getSelection().selectAllChildren(text);
-			let copy = document.execCommand("copy");
-			document.body.removeChild(text);
-			return copy;
-		};
+	shareURL(actid) {	// URL共有機能
 		actid = actid == undefined ? "" : "." + actid;
 		let url = location.origin + location.pathname + location.search + actid + location.hash;
-		execCopy(url);
+		navigator.clipboard.writeText(url);
 	};
 
-	playback() {					// 指定したリストを連続再生()
+	playback() {		// 指定したリストを連続再生()
 		const view_control = (list, idx) => {
 			if (list.length >= (idx + 1)) {
 				listTable.select(list[idx][0]);
@@ -284,9 +272,9 @@ class CMapMaker {
 					if (Conf.PoiView.update_mode == "all" || status.update) {
 						listTable.make();					// view all list
 						listTable.makeCategory(Conf.listTable.targets);
-						cMapMaker.eventChangeCategory();
+						listTable.filterCategory(listTable.getSelCategory());
 						this.viewArea(targets);	// in targets
-						this.viewPoi(targets);		// in targets
+						this.viewPoi(targets);	// in targets
 						resolve();
 					} else {
 						this.moveMapBusy = 0;
@@ -333,11 +321,10 @@ class CMapMaker {
 		}, 500);
 	};
 
-	// EVENT: change category
+	// EVENT: カテゴリ変更時のイベント
 	eventChangeCategory() {
 		let selcategory = listTable.getSelCategory();
 		listTable.filterCategory(selcategory);
-		//let targets = (Conf.listTable.targets.indexOf("targets") > -1) ? [list_category.value] : ["-"];
 		if (Conf.PoiView.update_mode == "filter") { this.viewPoi([selcategory]) };	// in targets
 		let catname = selcategory !== "-" ? `?category=${selcategory}` : "";
 		history.replaceState('', '', location.pathname + catname + location.hash);

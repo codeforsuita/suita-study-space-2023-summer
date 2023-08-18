@@ -40,7 +40,7 @@ class modal_Activities {
             head.innerHTML = act.title;
             head.setAttribute("id", act.id.replace("/", ""));
             let chtml = `<div class="float-right">${glot.get("update")} ${updated}[<a href="javascript:modal_activities.edit({id:'${act.id}',form:'${newmode}'})">${glot.get("act_edit")}</a>]</div>`;
-            chtml += glot.get("share_link") + `<button type="button" class="btn-sm btn-light ml-1 pl-2 pr-2 pt-0 pb-0" onclick="cMapMaker.url_share('${act.id}')">
+            chtml += glot.get("share_link") + `<button type="button" class="btn-sm btn-light ml-1 pl-2 pr-2 pt-0 pb-0" onclick="cMapMaker.shareURL('${act.id}')">
                 <i class="fas fa-clone"></i>
             </button><br><br>`;
             switch (newmode) {
@@ -202,7 +202,7 @@ class modal_Activities {
                             console.log("save: ok");
                             winCont.modal_close();
                             gSheet.get(Conf.google.AppScript).then(jsonp => {
-                                poiCont.set_actjson(jsonp);
+                                poiCont.setActdata(jsonp);
                                 let targets = (Conf.listTable.targets.indexOf("targets") > -1) ? [listTable.getSelCategory()] : ["-"];
                                 cMapMaker.viewArea(targets);	// in targets
                                 cMapMaker.viewPoi(targets);	// in targets
