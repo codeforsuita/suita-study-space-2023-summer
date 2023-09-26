@@ -97,10 +97,20 @@
         "shop": {
             "overpass": [
                 "node[\"shop\"]",
-                "way[\"shop\"]"
+                "way[\"shop\"]",
+                "node[\"amenity\"=\"cinema\"]",
+                "way[\"amenity\"=\"cinema\"]",
+                "node[\"amenity\"=\"coworking_space\"]",
+                "way[\"amenity\"=\"coworking_space\"]",
+                "node[\"craft\"=\"photographer\"]",
+                "way[\"craft\"=\"photographer\"]",
+                
             ],
             "tags": [
-                "shop"
+                "shop",
+                "amenity=cinema",
+                "amenity=coworking_space",
+                "craft=photographer"
             ],
             "expression": {
                 "stroke": "#507070",
@@ -217,10 +227,16 @@
             "overpass": [
                 "relation[\"amenity\"=\"hospital\"]",
                 "way[\"amenity\"=\"hospital\"]",
-                "node[\"amenity\"=\"hospital\"]"
+                "node[\"amenity\"=\"hospital\"]",
+                "way[\"amenity\"=\"clinic\"]",
+                "node[\"amenity\"=\"clinic\"]",
+                "way[\"amenity\"=\"doctors\"]",
+                "node[\"amenity\"=\"doctors\"]"
             ],
             "tags": [
-                "amenity=hospital"
+                "amenity=hospital",
+                "amenity=clinic",
+                "amenity=doctors"
             ],
             "expression": {
                 "stroke": "#606090",

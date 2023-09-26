@@ -14,8 +14,8 @@ class CMapMaker {
 
 	init() {
 		console.log("CMapMaker: init.");
-		MapLibre.on('moveend', this.eventMoveMap.bind(cMapMaker));   		// マップ移動時の処理
-		MapLibre.on('zoomend', this.eventZoomMap.bind(cMapMaker));			// ズーム終了時に表示更新
+		mapLibre.on('moveend', this.eventMoveMap.bind(cMapMaker));   		// マップ移動時の処理
+		mapLibre.on('zoomend', this.eventZoomMap.bind(cMapMaker));			// ズーム終了時に表示更新
 		list_keyword.addEventListener('change', this.eventChangeKeyword.bind(cMapMaker));	// 
 		list_category.addEventListener('change', this.eventChangeCategory.bind(cMapMaker));	// category change
 	};
@@ -45,7 +45,7 @@ class CMapMaker {
 	};
 
 	changeMap() {	// Change Map Style(rotation)
-		MapLibre.changeMap();
+		mapLibre.changeMap();
 	};
 
 	load_static() {	// check static osm mode
@@ -54,7 +54,7 @@ class CMapMaker {
 				resolve("cMapMaker: no static mode");
 			} else {
 				$.ajax({ "type": 'GET', "dataType": 'json', "url": Conf.static.osmjson, "cache": false }).done(function (data) {
-					let ovanswer = OvPassCnt.set_osmjson(data);
+					let ovanswer = OvPassCnt.setOsmJson(data);
 					poiCont.add_geojson(ovanswer);
 					resolve(ovanswer);
 				}).fail(function (jqXHR, statusText, errorThrown) {
@@ -71,7 +71,7 @@ class CMapMaker {
 		let pois = poiCont.get_pois(targets);
 		targets.forEach((target) => {
 			console.log("viewArea: " + target);
-			MapLibre.addLine({ "type": "FeatureCollection", "features": pois.geojson }, target);
+			mapLibre.addLine({ "type": "FeatureCollection", "features": pois.geojson }, target);
 		});
 		console.log("viewArea: End.");
 	};
@@ -81,40 +81,39 @@ class CMapMaker {
 		let nowselect = listTable.getSelCategory();
 		nowselect = nowselect[0] == "" ? "-" : nowselect[nowselect.length - 1];
 		console.log(`viewPoi: Start(now select ${nowselect}).`);
-		let zm = MapLibre.getZoom();
 		poiMarker.delete_all();
 		targets = targets[0] == "-" ? Conf.PoiView.targets : targets;					// '-'はすべて表示
 		let subcategory = Conf.PoiView.targets.indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
 		if (subcategory) {	// targets 内に選択肢が含まれていない場合（サブカテゴリ選択時）
-			let target = listTable.getSelCategory()[0];			// メインカテゴリを取得
-			if (zm >= Conf.PoiViewZoom[target]) {
-				poiMarker.set("", false, listTable.flist);
-				setcount = setcount + listTable.flist.length;
-			} else {
-				let flist = listTable.filterTarget(Conf.google.targetName);
-				poiMarker.set("", true, flist);
-			}
+			poiMarker.setPoi("", false, listTable.flist);
+			setcount = setcount + listTable.flist.length;
 		} else {			// targets 内に選択肢が含まれている場合
 			targets.forEach((target) => {
 				if (target == nowselect || nowselect == "-") {	// 選択している種別の場合
-					let activity = target == Conf.google.targetName;
-					if (zm >= Conf.PoiViewZoom[target] || activity) {
-						poiMarker.set(target, activity,);
-						setcount++;
-					}
+					poiMarker.setPoi(target, target == Conf.google.targetName);
+					setcount++;
 				}
 			});
 		}
 		/*
 		if (setcount == 0 && listTable.getFlistCount() > 0) {		// Poi表示無し&リストテーブルには存在する = ズーム無視で表示
 			let flist = listTable.filterTarget(Conf.google.targetName);
-			poiMarker.set("", true, flist);
+			poiMarker.setPoi("", true, flist);
 		}
 		*/
 		console.log("viewPoi: End.");
 	};
 
-	get_poi(targets) {		// OSMとGoogle SpreadSheetからPoiを取得してリスト化
+	// 画面内のActivity画像を表示させる
+	makeImages() {
+		let LL = mapLibre.get_LL(true);
+		let acts = poiCont.adata.filter(act => { return geoCont.checkInner(act.lnglat, LL) });
+		acts = acts.map(act => { return { "src": act.picture_url1, "osmid": act.osmid, "title": act.title } });
+		winCont.setImages(images, acts);
+	}
+
+	// OSMとGoogle SpreadSheetからPoiを取得してリスト化
+	get_poi(targets) {
 		return new Promise((resolve) => {
 			console.log("cMapMaker: get_poi: Start");
 			winCont.spinner(true);
@@ -123,12 +122,12 @@ class CMapMaker {
 			for (let [key, value] of Object.entries(Conf.PoiViewZoom)) {
 				if (key !== Conf.google.targetName) PoiLoadZoom = value < PoiLoadZoom ? value : PoiLoadZoom;
 			};
-			if ((MapLibre.getZoom() < PoiLoadZoom) && !Conf.static.mode) {
+			if ((mapLibre.getZoom(true) < PoiLoadZoom)) {
 				winCont.spinner(false);
 				console.log("[success]cMapMaker: get_poi End(more zoom).");
 				resolve({ "update": true });
 			} else {
-				OvPassCnt.get(keys, status_write).then(ovanswer => {
+				OvPassCnt.getGeojson(keys, status_write).then(ovanswer => {
 					winCont.spinner(false);
 					if (ovanswer) poiCont.add_geojson(ovanswer);
 					console.log("[success]cMapMaker: get_poi End.");
@@ -148,6 +147,18 @@ class CMapMaker {
 		};
 	};
 
+	viewImage(imgdom) {
+		console.log("viewImage: Start.");
+		let osmid = imgdom.getAttribute("osmid");
+		let poi = poiCont.get_osmid(osmid);
+		let zoomlv = Math.max(mapLibre.getZoom(true), Conf.DetailViewZoom);
+		if (poi !== undefined) {
+			mapLibre.flyTo(poi.lnglat, zoomlv);
+			cMapMaker.viewDetail(osmid);
+			console.log("viewImage: View OK.");
+		}
+	}
+
 	viewDetail(osmid, openid) {	// PopUpを表示(marker,openid=actlst.id)
 		const detail_close = () => {
 			let catname = listTable.getSelCategory() !== "-" ? `?category=${listTable.getSelCategory()}` : "";
@@ -159,12 +170,14 @@ class CMapMaker {
 		};
 		if (this.detail) detail_close();
 		let osmobj = poiCont.get_osmid(osmid);
-		let tags = osmobj == undefined ? { "targets": [] } : osmobj.geojson.properties;
+		if (osmobj == undefined) { console.log("Error: No osmobj"); return }	// Error
+
+		let tags = osmobj.geojson.properties;
+		let target = osmobj.targets[0];
 		tags["*"] = "*";
-		let target = osmobj == undefined ? "*" : osmobj.targets[0];
 		target = target == undefined ? "*" : target;					// targetが取得出来ない実在POI対応
 		let category = poiCont.getCatnames(tags);
-		let title = `<img src="./${Conf.icon.path}/${poiMarker.get_icon(tags)}" class="normal">`, message = "";
+		let title = `<img src="./${Conf.icon.path}/${poiMarker.get_icon(tags)}">`, message = "";
 
 		for (let i = 0; i < Conf.osm[target].titles.length; i++) {
 			if (tags[Conf.osm[target].titles[i]] !== void 0) {
@@ -199,6 +212,7 @@ class CMapMaker {
 			winCont.modal_open({ "title": title, "message": message, "append": Conf.detail_view.buttons, "mode": "close", "callback_close": detail_close, "menu": true, "openid": openid });
 		}
 		this.detail = true;
+
 	};
 
 	shareURL(actid) {	// URL共有機能
@@ -227,7 +241,7 @@ class CMapMaker {
 		if (this.status !== "playback") {
 			listTable.disabled(true);
 			listTable.heightSet(listTable.height / 4 + "px");
-			MapLibre.setZoom(Conf.listTable.playback.zoomLevel);
+			mapLibre.setZoom(Conf.listTable.playback.zoomLevel);
 			this.mode_change("list");
 			this.status = "playback";
 			icon_change("stop");
@@ -243,7 +257,7 @@ class CMapMaker {
 	download() {
 		const linkid = "temp_download";
 		let csv = "", link;
-		Conf.listTable.targets.forEach(target => { csv += basic.makeArray2CSV(poiCont.list(target)) });
+		Conf.listTable.targets.forEach(target => { csv += basic.makeArray2CSV(poiCont.makeList(target)) });
 		let bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
 		let blob = new Blob([bom, csv], { 'type': 'text/csv' });
 
@@ -268,13 +282,14 @@ class CMapMaker {
 				this.moveMapBusy = 2;
 				this.get_poi().then((status) => {
 					this.moveMapBusy = 0;
-					let targets = (Conf.listTable.targets.indexOf("targets") > -1) ? [listTable.getSelCategory()] : ["-"];
+					let targets = [listTable.getSelCategory()];
 					if (Conf.PoiView.update_mode == "all" || status.update) {
-						listTable.make();					// view all list
-						listTable.makeCategory(Conf.listTable.targets);
+						listTable.makeList();					// view all list
+						listTable.makeCategory(Conf.listTable.categorys);
 						listTable.filterCategory(listTable.getSelCategory());
 						this.viewArea(targets);	// in targets
 						this.viewPoi(targets);	// in targets
+						this.makeImages()
 						resolve();
 					} else {
 						this.moveMapBusy = 0;
@@ -302,9 +317,9 @@ class CMapMaker {
 	eventZoomMap() {
 		let poizoom = false;
 		for (let [key, value] of Object.entries(Conf.PoiViewZoom)) {
-			if (MapLibre.getZoom() >= value) poizoom = true;
+			if (mapLibre.getZoom(true) >= value) poizoom = true;
 		};
-		let message = `${glot.get("zoomlevel")}${Math.round(MapLibre.getZoom())} `;
+		let message = `${glot.get("zoomlevel")}${mapLibre.getZoom(true)} `;
 		if (!poizoom) message += `<br>${glot.get("morezoom")}`;
 		zoomlevel.innerHTML = "<h2 class='zoom'>" + message + "</h2>";
 	};
@@ -324,8 +339,9 @@ class CMapMaker {
 	// EVENT: カテゴリ変更時のイベント
 	eventChangeCategory() {
 		let selcategory = listTable.getSelCategory();
+		let targets = (Conf.listTable.targets.indexOf("targets") > -1) ? [selcategory] : ["-"];
 		listTable.filterCategory(selcategory);
-		if (Conf.PoiView.update_mode == "filter") { this.viewPoi([selcategory]) };	// in targets
+		if (Conf.PoiView.update_mode == "filter") { this.viewPoi(targets) };	// in targets
 		let catname = selcategory !== "-" ? `?category=${selcategory}` : "";
 		history.replaceState('', '', location.pathname + catname + location.hash);
 	};

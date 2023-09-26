@@ -74,6 +74,18 @@ li::before {
     background: green;
 }
 
+div.showcase {
+    overflow-x: scroll;
+    height: 20%;
+    display: flex;
+    scrollbar-width: none;
+    min-width: 100vw;
+}
+
+div.showcase::-webkit-scrollbar {
+    display: none;
+}
+
 /* fade out */
 
 #fadeLayer {
@@ -97,16 +109,17 @@ img.thumbnail {
     width: 50%;
 }
 
-img.normal {
-    background-size: cover;
-    float: left;
-    padding: 4px !important;
-    height: 32px !important;
-    width: 32px !important;
-    object-fit: contain;
+img.slide {
+    height: 20vh;
+    max-width: 25% !important;
+    margin: 2px;
+    border: 2px solid #ffffff;
+    display: block;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
+    cursor: grab;
 }
 
-img.circle {
+img.normal {
     background: url("./image/icon_circle.svg");
     background-size: cover;
     float: left;
@@ -178,21 +191,21 @@ span.subtitle {
     padding: 0px 0px 0px 0px;
 }
 
-span.circle {
+span.icon {
     border-radius: 8px;
     margin-left: 2px;
     padding: 0px 2px;
     white-space: nowrap;
-    background-color: rgb(255 255 255 / 80%);
+}
+
+span.normal {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 span.attention {
-    border-radius: 8px;
-    margin-left: 2px;
-    padding: 0px 2px;
-    white-space: nowrap;
-    font-weight: bold;
-    background-color: rgb(255 255 255 / 100%);
+    color: #000000;
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* マーカーのフォントサイズ選択 */
@@ -217,13 +230,21 @@ span.fs-14 {
 .modal-dialog-fluid {
     max-width: 800px !important;
     max-height: 98% !important;
-    width: 98% !important;
+    width: 98%;
     margin: auto !important;
 }
 
 .modal-body {
     font-size: 14px !important;
     overflow-x: hidden;
+}
+
+.leaflet-div-icon {
+    border: 0px !important;
+}
+
+.leaflet-popup-content {
+    width: 30vw;
 }
 
 input[type="search"] {
@@ -263,8 +284,7 @@ tr.selected td {
     bottom: 0px;
 }
 
-.card-header,
-.card-body {
+.card-header, .card-body {
     padding: 0px !important;
 }
 
@@ -285,6 +305,15 @@ tr.selected td {
 
 .bg-clear {
     background: transparent url("./image/transparent.png") !important;
+}
+
+.leaflet-container a {
+    color: initial !important;
+}
+
+.leaflet-touch .leaflet-control-layers-toggle {
+    width: 30px !important;
+    height: 30px !important;
 }
 
 .cursor-pointer {

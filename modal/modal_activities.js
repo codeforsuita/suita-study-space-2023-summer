@@ -37,12 +37,11 @@ class modal_Activities {
             let updated = basic.formatDate(new Date(act.updatetime), ymd);
             newmode = act.id.split('/')[0];
             let form = Conf.activities[newmode].form;
-            head.innerHTML = act.title;
+            head.innerHTML = act.title + ` <button type="button" class="btn-sm btn-light ml-1 pl-2 pr-2 pt-0 pb-0" onclick="cMapMaker.shareURL('${act.id}')">
+            <i class="fas fa-clone"></i></button>`;
             head.setAttribute("id", act.id.replace("/", ""));
-            let chtml = `<div class="float-right">${glot.get("update")} ${updated}[<a href="javascript:modal_activities.edit({id:'${act.id}',form:'${newmode}'})">${glot.get("act_edit")}</a>]</div>`;
-            chtml += glot.get("share_link") + `<button type="button" class="btn-sm btn-light ml-1 pl-2 pr-2 pt-0 pb-0" onclick="cMapMaker.shareURL('${act.id}')">
-                <i class="fas fa-clone"></i>
-            </button><br><br>`;
+            let edit = Conf.default.editMode ? `[<a href="javascript:modal_activities.edit({id:'${act.id}',form:'${newmode}'})">${glot.get("act_edit")}</a>]` : "";
+            let chtml = Conf.default.editMode ? `<div class="float-right">${glot.get("update")} ${updated}${edit}</div>` : "";
             switch (newmode) {
                 case "libc":
                     let mm = !parseInt(act.mm) ? "--" : ("00" + act.mm).substr(-2);
@@ -65,8 +64,6 @@ class modal_Activities {
                     chtml += "<strong>" + glot.get("memories_reception") + "</strong><br>" + basic.formatDate(new Date(act.reception), ymd) + "<br><br>";
                     break;
                 default:    // event
-                    head.innerHTML = act.title;
-
                     Object.keys(form).forEach((key) => {
                         chtml += `<div class='row'>`;
                         let gdata = act[form[key].gsheet] == undefined ? "" : String(act[form[key].gsheet]);
@@ -109,12 +106,17 @@ class modal_Activities {
 
     // make activity list
     make_activity_list(actlists) {
-        let html = "<ul class='ml-0 pl-4'>";
-        for (let act of actlists) {
-            console.log("modal_Activities: " + act.id);
-            html += `<li><span class="pointer" onclick="document.getElementById('${act.id.replace('/', '')}').scrollIntoView({behavior: 'smooth'})">${act.title}<span></li>`;
+        if (actlists.length > 1) {
+            let html = "<ul class='ml-0 pl-4'>";
+            for (let act of actlists) {
+                console.log("modal_Activities: " + act.id);
+                html += `<li><span class="pointer" onclick="document.getElementById('${act.id.replace('/', '')}').scrollIntoView({behavior: 'smooth'})">${act.title}<span></li>`;
+            }
+            return html + "</ul>";
         }
-        return html + "</ul>";
+        else {
+            return "";
+        }
     }
 
     // edit activity
@@ -229,7 +231,7 @@ class modal_Activities {
         document.getElementById("full_screen_image").style["background-image"] = "url('" + imgurl + "')";
     }
 
-    closeImage(){
+    closeImage() {
         document.getElementById("full_screen_image").classList.remove("isFullScreen");
     }
 
