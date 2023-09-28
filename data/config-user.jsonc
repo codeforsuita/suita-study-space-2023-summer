@@ -4,8 +4,8 @@
         "tile_default": "OSMFJ", // タイル一覧は config-system.jsonc へ
         "keep_viewCenter": false,
         "viewCenter": [
-            135.4828,
-            34.7212
+            137.156,
+            32.044
         ],
         "viewPitch": 40,
         "maxbounds": "",
@@ -19,7 +19,7 @@
                 35.09545
             ]
         ],
-        "initZoom": 14,
+        "initZoom": 5,
         "pc_minZoom": 5,
         "phone_minZoom": 4,
         "maxZoom": 22,
@@ -27,7 +27,7 @@
         "editMode": true // 編集メニューの表示/非表示
     },
     "DetailViewZoom": 17,
-    "PoiViewZoom": {    // targets毎の表示ズームを指定 / activity:gSheet / flist:絞り込み
+    "PoiViewZoom": { // targets毎の表示ズームを指定 / activity:gSheet / flist:絞り込み
         "Playgrounds_Poi": 13,
         "Playgrounds_Area": 13,
         "activity": 4
