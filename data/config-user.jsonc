@@ -24,7 +24,8 @@
         "phone_minZoom": 4,
         "maxZoom": 22,
         "zoomSnap": 0.5,
-        "editMode": true // 編集メニューの表示/非表示
+        "editMode": true, // 編集メニューの表示/非表示
+        "thumbnailWidth": "480"
     },
     "DetailViewZoom": 17,
     "PoiViewZoom": { // targets毎の表示ズームを指定 / activity:gSheet / flist:絞り込み

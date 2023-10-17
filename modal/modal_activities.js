@@ -27,6 +27,7 @@ class modal_Activities {
         let tModal = document.createElement("div");
         let template = document.createElement("div");
         let result = "", newmode = "";
+        let wikimq = [];
         template.innerHTML = this.html;
         actlists.sort((a, b) => { return a.updatetime > b.updatetime ? -1 : 1 });   // sort by update.
         result = modal_activities.make_activity_list(actlists);
@@ -87,7 +88,13 @@ class modal_Activities {
                                 break;
                             case "image_url":
                                 if (gdata !== "http://" && gdata !== "https://" && gdata !== "") {
-                                    chtml += `<div class="col text-center"><img class="thumbnail" onclick="modal_activities.viewImage('${gdata}')" src="${gdata}"></div><br>`;
+                                    if (gdata.slice(0, 5) == "File:") {  // Wikimedia Commons
+                                        let id = act.id.replace("/", "") + "_" + key;
+                                        wikimq.push([gdata, id]);
+                                        chtml += `<div class="col text-center"><img class="thumbnail" onclick="modal_activities.viewImage(this)" id="${id}"></div><br>`;
+                                    } else {
+                                        chtml += `<div class="col text-center"><img class="thumbnail" onclick="modal_activities.viewImage(this)" src="${gdata}"></div><br>`;
+                                    }
                                 };
                                 break;
                         };
@@ -99,6 +106,7 @@ class modal_Activities {
             body.innerHTML = chtml;
             result += clone.outerHTML;
         });
+        wikimq.forEach(q => { basic.getWikiMediaImage(q[0], Conf.default.thumbnailWidth, q[1]) });        // WikiMedia Image 遅延読み込み
         tModal.remove();
         template.remove();
         return result;
@@ -226,9 +234,11 @@ class modal_Activities {
         });
     }
 
-    viewImage(imgurl) {
+    viewImage(e) {
+        let src_org = e.getAttribute("src_org");
+        src_org = src_org == null ? e.src : src_org;
         document.getElementById("full_screen_image").classList.add("isFullScreen");
-        document.getElementById("full_screen_image").style["background-image"] = "url('" + imgurl + "')";
+        document.getElementById("full_screen_image").style["background-image"] = "url('" + src_org + "')";
     }
 
     closeImage() {

@@ -107,8 +107,14 @@ class CMapMaker {
 	// 画面内のActivity画像を表示させる
 	makeImages() {
 		let LL = mapLibre.get_LL(true);
-		let acts = poiCont.adata.filter(act => { return geoCont.checkInner(act.lnglat, LL) });
-		acts = acts.map(act => { return { "src": act.picture_url1, "osmid": act.osmid, "title": act.title } });
+		let acts = poiCont.adata.filter(act => { return geoCont.checkInner(act.lnglat, LL) && act.picture_url1 !== "" });
+		acts = acts.map(act => {
+			let urls = [];
+			let actname = act.id.split("/")[0];
+			let forms = Conf.activities[actname].form;
+			Object.keys(forms).forEach(key => { if (forms[key].type == "image_url") urls.push(act[key]) });
+			return { "src": urls, "osmid": act.osmid, "title": act.title }
+		});
 		winCont.setImages(images, acts);
 	}
 
