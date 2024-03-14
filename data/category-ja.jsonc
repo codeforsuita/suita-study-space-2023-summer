@@ -30,6 +30,7 @@
             "fire_station": "消防署",
             "food_court": "フードコート",
             "fountain": "噴水",
+            "gambling": "娯楽",
             "grave_yard": "墓地",
             "hospital": "病院",
             "ice_cream": "アイスクリーム店",
@@ -189,6 +190,7 @@
             "fire_extinguisher": "消火器",
             "fire_hydrant": "消火栓",
             "fire_hose": "消火ホース",
+            "fire_lookout": "火の見櫓",
             "defibrillator": "AED",
             "siren": "サイレン",
             "water_tank": "防火水槽"
@@ -330,6 +332,11 @@
         "bookmarked": "スターつき"
     },
     "category_sub": {
+        "gambling": {
+            "gambling": {
+                "mahjong": "麻雀"
+            }
+        },
         "social_facility": {
             "social_facility": {
                 "shelter": "一時避難所"

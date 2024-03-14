@@ -24,6 +24,10 @@
                     "type": "url",
                     "gsheet": "detail_url"
                 },
+                "attention":{
+                    "glot":"act_attention",
+                    "type":"attention"
+                },
                 "picture_url1": {
                     "glot": "act_picture_url1",
                     "type": "image_url",

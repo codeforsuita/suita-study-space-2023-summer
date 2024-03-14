@@ -30,6 +30,7 @@
             "fire_station": "fire station",
             "food_court": "food court",
             "fountain": "fountain",
+            "gambling": "gambling",
             "grave_yard": "grave yard",
             "hospital": "Hospital",
             "ice_cream": "ice cream",
@@ -189,6 +190,7 @@
             "fire_extinguisher": "extinguisher",
             "fire_hydrant": "hydrant",
             "fire_hose": "hose",
+            "fire_lookout": "fire lookout",
             "defibrillator": "AED",
             "siren": "Siren",
             "water_tank": "Water Tank"
@@ -330,6 +332,11 @@
         "bookmarked": "Starred"
     },
     "category_sub": {
+        "amenity": {
+            "gambling": {
+                "mahjong": "mahjong"
+            }
+        },
         "social_facility": {
             "social_facility": {
                 "shelter": "temporary sleeping"

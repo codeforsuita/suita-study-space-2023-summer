@@ -23,3 +23,8 @@
              遊具の写真を画面上に表示する機能を追加
 * 2023/10/18 WikiMedia Commonsのファイル指定に対応
              「File:笠ノ庄児童遊園.jpg」などと指定
+* 2024/03/15 システムのCommunityMapmakerを最新へ更新
+             Wikimedia Commonsのコピーライトを追加
+             Overpass APIにOSM JPのテストサーバを追加
+             サムネイル画像サイズを調整
+             編集画面でコメントを表示する機能を追加

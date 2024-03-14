@@ -75,6 +75,10 @@
 		"ja": "題名",
 		"en": "Subject"
 	},
+	"act_attention": {
+		"ja": "写真URLにWikimedia Commonsを指定する時は、タイトルを入力してください(例 File:遊具名.jpg)",
+		"en": "When specifying Wikimedia Commons for the photo URL, enter the title (e.g. File: Play equipment name.jpg)"
+	},
 	"act_memo": {
 		"ja": "説明",
 		"en": "Detail"

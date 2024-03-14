@@ -1,55 +1,46 @@
 // Community Mapmaker User Config
 {
-    "default": {
-        "tile_default": "OSMFJ", // タイル一覧は config-system.jsonc へ
-        "keep_viewCenter": false,
+    "map": {
+        "tileName": "OSMFJ", // タイル一覧は config-system.jsonc へ
         "viewCenter": [
-            137.156,
-            32.044
+            135.774,
+            34.363
         ],
         "viewPitch": 40,
         "maxbounds": "",
-        "_maxbounds": [
+        "_maxBounds": [
             [
-                136.11914,
-                34.94088
+                135.30000,
+                34.54000
             ],
             [
-                135.86492,
-                35.09545
+                135.80000,
+                34.80000
             ]
         ],
-        "initZoom": 5,
-        "pc_minZoom": 5,
-        "phone_minZoom": 4,
-        "maxZoom": 22,
-        "zoomSnap": 0.5,
+        "initZoom": 7,
+        "maxZoom": 23,
+        "modalZoom": 19 // モーダルダイアログ表示時のズームサイズ   
+    },
+    "view": {
+        "poiZoom": {
+            // アイコンの前後位置は後ろの方が手前になる
+            "Playgrounds_Park": 14,
+            "Playgrounds_Play": 17,
+            "Playgrounds_Etc": 18,
+            "activity": 7
+        },
+        "poiFilter": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
+    },
+    "etc": {
         "editMode": true, // 編集メニューの表示/非表示
-        "thumbnailWidth": "480"
-    },
-    "DetailViewZoom": 17,
-    "PoiViewZoom": { // targets毎の表示ズームを指定 / activity:gSheet / flist:絞り込み
-        "Playgrounds_Poi": 13,
-        "Playgrounds_Area": 13,
-        "activity": 4
-    },
-    "PoiView": {
-        "targets": [
-            "Playgrounds_Poi",
-            "Playgrounds_Area",
-            "activity"
-        ],
-        "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
+        "thumbnailWidth": "240",
+        "splashUrl": "./image/ogimage.png"
     },
     "listTable": {
-        "categorys": [ // カテゴリ選択 / targets:ターゲットリスト / activity:アクティビティリスト // tags:タグ
-            "tags"
-        ],
-        "targets": [ // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
-            "Playgrounds_Poi",
-            "Playgrounds_Area",
-            "activity"
-        ],
+        "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
+        "target": "tags", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
+        "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
             "zoomLevel": 15,
@@ -57,77 +48,79 @@
         },
         "download": false
     },
+    "PoiView": {
+        "targets": [
+            "Playgrounds_Park",
+            "Playgrounds_Play",
+            "Playgrounds_Etc",
+            "activity"
+        ],
+        "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
+    },
     "google": {
         "Analytics": "",
         "AppScript": "https://script.google.com/macros/s/AKfycbwdGm79dGy42p32KrmdkTGnWgsySCDUR-BupPRqdaPWZZ78Do9BwEwoa53NUE7i2kc3/exec",
         "targetName": "activity"
     },
-    "splash": {
-        "url": "./image/Playgrounds.png"
-    },
     "static": {
         "mode": false,
-        "osmjson": "",
-        "osmbounds": {
-            "NW": {
-                "lat": 45.7392,
-                "lng": 119.0340
-            },
-            "SE": {
-                "lat": 20.5444,
-                "lng": 144.8863
-            }
-        }
+        "osmjson": ""
     },
-    // トップメニュー一覧
-    "menu": [
-        {
-            "glot-model": "about",
-            "linkto": "javascript:cMapMaker.about()",
-            "divider": false
-        },
-        {
-            "glot-model": "owner",
-            "linkto": "https://k-sakanoshita.medium.com/1173cab3fd72",
-            "divider": true
-        },
-        {
-            "glot-model": "licence_title",
-            "linkto": "javascript:cMapMaker.licence()",
-            "divider": false
-        },
-        {
-            "glot-model": "develop_site",
-            "linkto": "https://github.com/armd-02/Playgrounds",
-            "divider": false
-        },
-        {
-            "glot-model": "openstreetmap",
-            "linkto": "https://www.openstreetmap.org/about",
-            "divider": false
-        }
-    ],
-    // 詳細表示のモーダル設定
-    "detail_menu": [
-        {
-            "glot-model": "act_add",
-            "linkto": "javascript:modal_activities.edit({form:'Playgrounds'})",
-            "divider": false
-        },
-        {
-            "glot-model": "osm_open",
-            "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",
-            "divider": false
-        },
-        {
-            "glot-model": "button_close",
-            "linkto": "javascript:winCont.modal_close()",
-            "divider": false
-        }
-    ],
-    "detail_view": {
-        // 詳細モーダルの一番上を開くかどうか
-        "openfirst": true,
+    "wikipedia": {
+        "marker": "wikipedia.svg",
+        "api_": "wikipedia.org/w/api.php?format=json&action=query&prop=extracts%7Cimages&exintro=&explaintext=&titles=",
+        "api": "wikipedia.org/api/rest_v1/page/summary/",
+        "domain": "wikipedia.org",
+        "tag": "wikipedia",
+        "image": true
+    },
+    "menu": {
+        "main": [
+            // トップメニュー一覧
+            {
+                "glot-model": "about",
+                "linkto": "javascript:cMapMaker.about()",
+                "divider": false
+            },
+            {
+                "glot-model": "owner",
+                "linkto": "https://k-sakanoshita.medium.com/1173cab3fd72",
+                "divider": true
+            },
+            {
+                "glot-model": "licence_title",
+                "linkto": "javascript:cMapMaker.licence()",
+                "divider": false
+            },
+            {
+                "glot-model": "develop_site",
+                "linkto": "https://github.com/armd-02/Playgrounds",
+                "divider": false
+            },
+            {
+                "glot-model": "openstreetmap",
+                "linkto": "https://www.openstreetmap.org/about",
+                "divider": false
+            }
+        ],
+        // 詳細表示のハンバーガーメニュー
+        "modal": [
+            {
+                "glot-model": "act_add",
+                "linkto": "javascript:modal_activities.edit({form:'Playgrounds'})",
+                "divider": false
+            },
+            {
+                "glot-model": "osm_open",
+                "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",
+                "divider": false
+            },
+            {
+                "glot-model": "button_close",
+                "linkto": "javascript:winCont.modal_close()",
+                "divider": false
+            }
+        ],
         // 詳細モーダルの追加ボタン 
         "buttons": [
             {

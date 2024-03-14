@@ -10,7 +10,6 @@ const FILES = [
 	`./data/marker.jsonc`, `./data/category-${LANG}.jsonc`, `data/listtable-${LANG}.jsonc`,
 	'./data/overpass-system.jsonc', `./data/overpass-custom.jsonc`, `./data/glot-custom.jsonc`, `data/glot-system.jsonc`];
 const glot = new Glottologist();
-var modal_takeout = new modal_Takeout();
 var modal_activities = new modal_Activities();
 var modal_wikipedia = new modal_Wikipedia();
 var basic = new Basic();
@@ -31,9 +30,10 @@ window.addEventListener("DOMContentLoaded", function () {
 	const fetchUrls = FILES.map(url => fetch(url).then(res => res.text()));
 	Promise.all(fetchUrls).then(texts => {
 		let basehtml = texts[0];											// Get Menu HTML
-		for (let i = 1; i <= 8; i++) {
+		for (let i = 1; i <= 7; i++) {
 			Conf = Object.assign(Conf, JSON5.parse(texts[i]));
 		};
+		Conf.osm = Object.assign(Conf.osm, JSON5.parse(texts[8]).osm);
 		Conf.category_keys = Object.keys(Conf.category);					// Make Conf.category_keys
 		Conf.category_subkeys = Object.keys(Conf.category_sub);				// Make Conf.category_subkeys
 		glot.data = Object.assign(glot.data, JSON5.parse(texts[9]));		// import glot data
@@ -56,15 +56,15 @@ window.addEventListener("DOMContentLoaded", function () {
 			mapLibre.addControl("bottom-right", "global_spinner", "", "spinner-border text-primary d-none");
 			mapLibre.addControl("bottom-left", "images", "", "showcase");	// add images
 			mapLibre.addControl("bottom-left", "zoomlevel", "");
-			winCont.playback(Conf.listTable.playback.view);		// playback control view:true/false
-			winCont.download(Conf.listTable.download);			// download view:true/false
-			cMapMaker.init();
-			cMapMaker.mode_change("map");						// initialize last_modetime
-			winCont.menu_make(Conf.menu, "main_menu");
-			winCont.mouseDragScroll(images,cMapMaker.viewImage);					// set Drag Scroll on images
+			winCont.playback(Conf.listTable.playback.view);			// playback control view:true/false
+			winCont.download(Conf.listTable.download);				// download view:true/false
+			cMapMaker.mode_change("map");							// initialize last_modetime
+			winCont.menu_make(Conf.menu.main, "main_menu");
+			winCont.mouseDragScroll(images, cMapMaker.viewImage);	// set Drag Scroll on images
 			glot.render();
 
 			const init_close = function () {
+				listTable.makeSelectList(Conf.listTable.category);	// Must be executed before eventMoveMap
 				let eventMoveMap = cMapMaker.eventMoveMap.bind(cMapMaker);
 				eventMoveMap().then(() => {
 					winCont.splash(false);
@@ -90,6 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
 							};
 						};
 					};
+					cMapMaker.addEvents();
 				});
 			}
 
@@ -104,7 +105,8 @@ window.addEventListener("DOMContentLoaded", function () {
 					init_close();
 				});
 			} else {
-				init_close();
+				poiCont.setActlnglat()
+				init_close()
 			}
 
 		});
