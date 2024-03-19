@@ -203,7 +203,7 @@ class modal_Activities {
                     let senddata = { "id": act_id.value, "osmid": act_osmid.value };
                     Object.keys(act[params.form].form).forEach(key => {
                         let field = act[params.form].form[key];
-                        if (field.gsheet !== "") senddata[field.gsheet] = document.getElementById("act_" + key).value
+                        if (field.gsheet !== "" && field.gsheet !== undefined) senddata[field.gsheet] = document.getElementById("act_" + key).value
                     });
                     gSheet.get_salt(Conf.google.AppScript, userid).then((e) => {
                         winCont.modal_progress(40);
