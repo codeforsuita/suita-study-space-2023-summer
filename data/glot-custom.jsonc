@@ -1,7 +1,7 @@
 {
 	"site_title": {
-		"ja": "吹田市内の自習マップ 2023年夏版",
-		"en": "study space map in Suita City 2023 version"
+		"ja": "吹田市内の自習マップ 2024年夏版",
+		"en": "study space map in Suita City 2024 version"
 	},
 	"site_subtitle": {
 		"ja": "by Code For Suita",
@@ -9,7 +9,7 @@
 	},
 	"about": {
 		"ja": "Code For Suitaとは",
-		"en": "study space map in Suita City 2023 version development site"
+		"en": "study space map in Suita City 2024 version development site"
 	},
 	"about_message": {
 		"ja": "吹田市でCivicTechの普及やオープンデータの推進に取り組んでいます。詳しくは<a href='https://www.facebook.com/code4suita'>Facebookへ</a>",
@@ -21,15 +21,15 @@
 	},
 	"licence_title": {
 		"ja": "利用しているデータについて",
-		"en": "about study space map in Suita City 2023 version"
+		"en": "about study space map in Suita City 2024 version"
 	},
 	"licence_message": {
-		"ja": "このサイトで使われているデータは、OpenStreetMapと、吹田市が公開している<a href='https://www.city.suita.osaka.jp/kosodate/1020164/1028410.html'>オープンデータ「すいた夏休み自習室2023」</a>を組み合わせています。",
+		"ja": "このサイトで使われているデータは、OpenStreetMapと、吹田市が公開している<a href='https://www.city.suita.osaka.jp/kosodate/1020164/1028410.html'>オープンデータ「すいた夏休み自習室2024」</a>を組み合わせています。",
 		"en": "We are all collecting information about study spaces and making maps.<br>The data used is a combination of OpenStreetMap and <a href='https://www.city.suita.osaka.jp/kosodate/1020164/1028410.html'>Suita city open data.</a>"
 	},
 	"develop_site": {
-		"ja": "吹田市内の自習マップ 2023年夏版のソースコード",
-		"en": "source code of study space map in Suita City 2023 version"
+		"ja": "吹田市内の自習マップ 2024年夏版のソースコード",
+		"en": "source code of study space map in Suita City 2024 version"
 	},
 	"more_message": {
 		"ja": "",
