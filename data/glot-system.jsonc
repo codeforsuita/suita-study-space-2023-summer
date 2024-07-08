@@ -1,8 +1,4 @@
 {
-	"cat_select": {
-		"ja": "選択表示",
-		"en": "Select display"
-	},
 	"act_add": {
 		"ja": "追加",
 		"en": "Add information"
@@ -87,6 +83,18 @@
 		"ja": "いいえ",
 		"en": "NO"
 	},
+	"available": {
+		"ja": "有り",
+		"en": "available"
+	},
+	"unavailable": {
+		"ja": "無し",
+		"en": "unavailable"
+	},
+	"limited": {
+		"ja": "限定的",
+		"en": "limited"
+	},
 	"loading_title": {
 		"ja": "マップデータのロード中",
 		"en": "Loading map data"
@@ -148,12 +156,16 @@
 		"en": "See in OpenStreetMap"
 	},
 	"target_activity": {
-		"ja": "活動内容",
+		"ja": "口コミ",
 		"en": "activity"
 	},
 	"target_arts": {
 		"ja": "アート",
 		"en": "arts"
+	},
+	"target_bath":{
+		"ja": "銭湯",
+		"en": "bath"
 	},
 	"target_pub": {
 		"ja": "居酒屋・パブ",
@@ -227,6 +239,10 @@
 		"ja": "石碑・道祖神",
 		"en": "historic(poi)"
 	},
+	"target_hospital": {
+		"ja": "病院",
+		"en": "hospital"
+	},
 	"target_water": {
 		"ja": "水域",
 		"en": "water"
@@ -266,5 +282,13 @@
 	"target_wikipedia": {
 		"ja": "Wikipedia",
 		"en": "Wikipedia"
+	},
+	"changing_table": {
+		"ja": "おむつ交換台",
+		"en": "diaper hanging table"
+	},
+	"wheelchair": {
+		"ja": "車椅子対応",
+		"en": "wheelchair"
 	}
 }

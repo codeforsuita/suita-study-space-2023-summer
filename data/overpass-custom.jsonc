@@ -1,15 +1,10 @@
 {
     "osm": {
-        "Playgrounds_Area": {
+        "Playgrounds_Park": {
             "overpass": [
-                "node[\"leisure\"=\"park\"]",
-                "way[\"leisure\"=\"park\"]",
-                "node[\"leisure\"=\"playground\"]",
-                "way[\"leisure\"=\"playground\"]",
-                "way[\"landuse\"=\"recreation_ground\"]",
-                "relation[\"leisure\"=\"park\"]",
-                "relation[\"leisure\"=\"playground\"]",
-                "relation[\"landuse\"=\"recreation_ground\"]"
+                "nwr[\"leisure\"=\"park\"]",
+                "nwr[\"leisure\"=\"playground\"]",
+                "nwr[\"landuse\"=\"recreation_ground\"]"
             ],
             "tags": [
                 "leisure=park",
@@ -18,21 +13,36 @@
             ],
             "expression": {
                 "stroke": "#409040",
-                "stroke-width": 2
+                "stroke-width": 4
             },
             "titles": [
                 "name",
                 "operator"
             ]
         },
-        "Playgrounds_Poi": {
+        "Playgrounds_Play": {
             "overpass": [
-                "node[\"playground\"]",
-                "way[\"playground\"]",
-                "area[\"playground\"]"
+                "nwr[\"playground\"]"
             ],
             "tags": [
                 "playground"
+            ],
+            "expression": {
+                "stroke": "#c0c0c0",
+                "stroke-width": 1
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "Playgrounds_Etc": {
+            "overpass": [
+                "nwr[\"amenity\"=\"toilets\"]",
+                "nwr[\"amenity\"=\"drinking_water\"]"
+            ],
+            "tags": [
+                "amenity"
             ],
             "expression": {
                 "stroke": "#c0c0c0",
