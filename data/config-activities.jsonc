@@ -14,10 +14,25 @@
                     "type": "text",
                     "gsheet": "title"
                 },
-                "memo": {
-                    "glot": "act_memo",
-                    "type": "textarea",
-                    "gsheet": "body"
+                // "memo": {
+                //     "glot": "act_memo",
+                //     "type": "textarea",
+                //     "gsheet": "body"
+                // },
+                "amenity_name": {
+                    "glot": "amenity_name",
+                    "type": "text",
+                    "gsheet": "amenity_name"
+                },
+                "space_name": {
+                    "glot": "space_name",
+                    "type": "text",
+                    "gsheet": "space_name"
+                },
+                "address": {
+                    "glot": "address",
+                    "type": "text",
+                    "gsheet": "address"
                 },
                 "capacity": {
                     "glot": "capacity",
@@ -33,6 +48,16 @@
                     "glot": "utilization_time",
                     "type": "text",
                     "gsheet": "utilization_time"
+                },
+                "precautions_about_space": {
+                    "glot": "precautions_about_space",
+                    "type": "text",
+                    "gsheet": "precautions_about_space"
+                },
+                "precautions_about_eating": {
+                    "glot": "precautions_about_eating",
+                    "type": "text",
+                    "gsheet": "precautions_about_eating"
                 },
                 "detail_url": {
                     "glot": "ds_detail_url",

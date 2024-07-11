@@ -180,15 +180,35 @@
 		"en": "Reception date"
 	},
 	"capacity": {
-		"ja": "定員",
+		"ja": "席数",
 		"en": "capacity"
 	},
 	"target": {
-		"ja": "対象者",
+		"ja": "利用できる人",
 		"en": "Target"
 	},
 	"utilization_time": {
-		"ja": "利用時間",
+		"ja": "利用できる日時",
 		"en": "Utilization time"
+	},
+	"amenity_name":{
+		"ja": "施設名",
+		"en": "Amenity name"
+	},
+	"space_name":{
+		"ja": "スペースの名称など",
+		"en": "Space name"
+	},
+	"address":{
+		"ja": "住所",
+		"en": "Address"
+	},
+	"precautions_about_space":{
+		"ja": "利用上の注意",
+		"en": "Precautions about space"
+	},
+	"precautions_about_eating":{
+		"ja": "飲食について",
+		"en": "Precautions about eating"
 	}
 }
