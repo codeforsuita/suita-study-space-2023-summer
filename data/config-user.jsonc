@@ -129,7 +129,7 @@
         "modal": [
             {
                 "glot-model": "act_add",
-                "linkto": "javascript:modal_activities.edit({form:'Playgrounds'})",
+                "linkto": "javascript:modal_activities.edit({form:'StudySpaces'})",
                 "divider": false
             },
             {
@@ -145,12 +145,12 @@
         ],
         // 詳細モーダルの追加ボタン 
         "buttons": [
-            // {
-            //     "btn_class": "btn btn-light border-secondary mr-2",
-            //     "code": "javascript:modal_activities.edit({form:'Playgrounds'})",
-            //     "icon_class": "fas fa-plus",
-            //     "btn_glot_name": "add_activity"
-            // },
+            {
+                "btn_class": "btn btn-light border-secondary mr-2",
+                "code": "javascript:modal_activities.edit({form:'StudySpaces'})",
+                "icon_class": "fas fa-plus",
+                "btn_glot_name": "add_activity"
+            },
             {
                 "btn_class": "btn btn-light border-secondary",
                 "code": "javascript:cMapMaker.shareURL()",
