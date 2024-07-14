@@ -107,10 +107,10 @@ class modal_Activities {
                 case "date":
                   chtml += `<div class='col-12'>${glot.get(
                     form[key].glot
-                  )}</div><div class='col-12'>${basic.formatDate(
+                  )}</div><div class='col-12'><p>${basic.formatDate(
                     new Date(gdata),
                     "YYYY/MM/DD"
-                  )}</div>`;
+                  )}</p></div>`;
                   break;
                 case "select":
                 case "text":
@@ -124,7 +124,7 @@ class modal_Activities {
                     gdata = basic.autoLink(gdata);
                     chtml += `<div class='col-12'><span class="font-weight-bold">${glot.get(
                       form[key].glot
-                    )}</span>${gdata.replace(/\r?\n/g, "<br>")}</div>`;
+                    )}</span><p>${gdata.replace(/\r?\n/g, "<br>")}</p></div>`;
                   }
                   break;
                 case "quiz_textarea":
