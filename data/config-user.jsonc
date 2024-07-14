@@ -25,15 +25,15 @@
     "view": {
         "poiZoom": {
             // アイコンの前後位置は後ろの方が手前になる
-            "library":14,
-            "centre":14, 
+            // "library":14,
+            // "centre":14, 
             "activity":14,
-            "government":14
+            // "government":14
         },
         "poiFilter": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
     },
     "etc": {
-        "editMode": true, // 編集メニューの表示/非表示
+        "editMode": false, // 編集メニューの表示/非表示
         "thumbnailWidth": "240",
         "splashUrl": "./image/ogimage.png"
     },
@@ -64,10 +64,10 @@
     },
     "PoiView": {
         "targets": [
-            "library",
-            "centre",
+            // "library",
+            // "centre",
             "activity",
-            "government"
+            // "government"
         ],
         "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
     },
